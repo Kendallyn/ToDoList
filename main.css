@@ -1,3 +1,37 @@
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    font-size: 22px;
+}
+
+.container #to-do-list-form input {
+    padding: 5px;
+    font-size: 18px;
+}
+
+.container ul {
+    border-top: 2px solid gray;
+}
+
+.container ul li {
+    font-size: 20px;
+    list-style: none;
+    margin-top: 10px;
+    text-align: center;
+    border-bottom: 1px dotted black;
+}
+
+.container button {
+    font-size: 14px;
+    margin: 5px;
+}
+
 .to-do-list-task-checked {
     text-decoration: line-through;
 }
