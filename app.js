@@ -2,7 +2,7 @@
 
 var state = {
     tasks: [{
-        name: 'Clean',
+        name: 'Dust',
         checked: false,
     }, {
         name: 'Organize',
@@ -36,3 +36,47 @@ function deleteTask(state, taskName) {
     }
     tasksArray.splice(index, 1);
 }
+
+//render the list
+function renderList(state) {
+    var buildTheHtmlOutput = "";
+
+    $.each(state.tasks, function (taskKey, taskValue) {
+        buildTheHtmlOutput += '<li>';
+        if (taskValue.checked == false) {
+            buildTheHtmlOutput += '<span class="to-do-list-task">' + taskValue.name + '</span>';
+        } else {
+            buildTheHtmlOutput += '<span class="to-do-list-task-checked">' + taskValue.name + '</span>';
+        }
+        buildTheHtmlOutput += '<div class="taskControls">';
+        buildTheHtmlOutput += '<button class="taskToggle">';
+        buildTheHtmlOutput += '<span class="button-label">Check</span>';
+        buildTheHtmlOutput += '</button>';
+        buildTheHtmlOutput += '<button class="taskDelete">';
+        buildTheHtmlOutput += '<span class="button-label">Delete</span>';
+        buildTheHtmlOutput += '</button>';
+        buildTheHtmlOutput += '</div>';
+        buildTheHtmlOutput += '</li>';
+    });
+    $('.to-Do-List').html(buildTheHtmlOutput);
+    $('#to-do-list-entry').val('');
+}
+
+$(document).ready(function () {
+    renderList(state);
+
+    $("#to-do-list-form").on('submit keypress', function (event) {
+        if (event.type === 'submit') {
+            event.preventDefault();
+            var taskName = $('#to-do-list-entry').val();
+            var taskItem = {
+                name: taskName,
+                checked: false,
+            }
+            if (taskName) {
+                addTask(state, taskItem);
+                renderList(state);
+            }
+        }
+    });
+});
