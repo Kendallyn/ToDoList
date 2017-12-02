@@ -28,8 +28,8 @@ label {
 }
 
 .container button {
-    font-size: 14px;
-    margin: 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .to-do-list-task-checked {
