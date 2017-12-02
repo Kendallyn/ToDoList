@@ -4,11 +4,9 @@ var state = {
     tasks: [{
         name: 'Dust',
         checked: false,
-        description: 'Dust all the furniture'
     }, {
         name: 'Organize',
-        checked: true,
-        description: 'Organize all bedrooms closets'
+        checked: false,
     }]
 };
 
@@ -46,9 +44,9 @@ function renderList(state) {
     $.each(state.tasks, function (taskKey, taskValue) {
         buildTheHtmlOutput += '<li>';
         if (taskValue.checked == false) {
-            buildTheHtmlOutput += '<span class="to-do-list-task">' + taskValue.name + ": " + taskValue.description + '</span>';
+            buildTheHtmlOutput += '<span class="to-do-list-task">' + taskValue.name + '</span>';
         } else {
-            buildTheHtmlOutput += '<span class="to-do-list-task to-do-list-task-checked">' + taskValue.name + ": " + taskValue.description + '</span>';
+            buildTheHtmlOutput += '<span class="to-do-list-task to-do-list-task-checked">' + taskValue.name + '</span>';
         }
         buildTheHtmlOutput += '<div class="taskControls">';
         buildTheHtmlOutput += '<button class="taskToggle">';
@@ -74,7 +72,6 @@ $(document).ready(function () {
             var taskItem = {
                 name: tasksName,
                 checked: false,
-                description: tasksDescription
             }
             if (tasksName) {
                 addTask(state, taskItem);
