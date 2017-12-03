@@ -37,11 +37,6 @@ function deleteTask(state, tasksName) {
     tasksArray.splice(index, 1);
 }
 
-//add details to the task function
-//function addDetails(state, tasksName) {
-//    var detailsInput = prompt("Add task details");
-//}
-
 
 //render the list
 function renderList(state) {
@@ -111,3 +106,5 @@ $('ul').on('click', 'button.taskDetails', function (event) {
     var detailsInput = prompt("Add task details here");
     $(this).closest('li').append("<span>Details: " + detailsInput);
 });
+
+//add deadline to this item
