@@ -16,7 +16,7 @@ function addTask(state, task) {
     return state.tasks;
 }
 
-//checkoff the task
+//checkoff the task function
 function checkTask(state, tasksName) {
     for (var i = 0; i < state.tasks.length; i++) {
         if (state.tasks[i].name === tasksName) {
@@ -25,7 +25,7 @@ function checkTask(state, tasksName) {
     }
 }
 
-//delete the task
+//delete the task function
 function deleteTask(state, tasksName) {
     var tasksArray = state.tasks;
     var index;
@@ -36,6 +36,12 @@ function deleteTask(state, tasksName) {
     }
     tasksArray.splice(index, 1);
 }
+
+//add details to the task function
+//function addDetails(state, tasksName) {
+//    var detailsInput = prompt("Add task details");
+//}
+
 
 //render the list
 function renderList(state) {
@@ -98,4 +104,10 @@ $('ul').on('click', 'button.taskDelete', function (event) {
     var tasksName = $(this).closest('li').find('.to-do-list-task').text();
     deleteTask(state, tasksName);
     renderList(state);
+});
+
+//add details to this item
+$('ul').on('click', 'button.taskDetails', function (event) {
+    var detailsInput = prompt("Add task details here");
+    $(this).closest('li').append("<span>Details: " + detailsInput);
 });
