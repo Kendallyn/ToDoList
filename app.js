@@ -59,6 +59,9 @@ function renderList(state) {
         buildTheHtmlOutput += '<button class="taskDetails">';
         buildTheHtmlOutput += '<span class="button-label">Details</span>';
         buildTheHtmlOutput += '</button>';
+        buildTheHtmlOutput += '<button class="taskDeadline">';
+        buildTheHtmlOutput += '<span class="button-label">Deadline</span>';
+        buildTheHtmlOutput += '</button>';
         buildTheHtmlOutput += '</div>';
         buildTheHtmlOutput += '</li>';
     });
@@ -103,8 +106,12 @@ $('ul').on('click', 'button.taskDelete', function (event) {
 
 //add details to this item
 $('ul').on('click', 'button.taskDetails', function (event) {
-    var detailsInput = prompt("Add task details here");
-    $(this).closest('li').append("<span>Details: " + detailsInput);
+    var detailsInput = prompt("Add task details here:");
+    $(this).closest('li').append("<li>Details: " + detailsInput + "</li>");
 });
 
 //add deadline to this item
+$('ul').on('click', 'button.taskDeadline', function (event) {
+    var deadlineDate = prompt("Deadline date for task:");
+    $(this).closest('li').append("<li>Deadline: " + deadlineDate + "</li>");
+})
