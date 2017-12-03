@@ -113,6 +113,7 @@ $('ul').on('click', 'button.taskDetails', function (event) {
 //add deadline to this item
 $('ul').on('click', 'button.taskDeadline', function (event) {
     var deadlineDate = prompt("Deadline date for task:");
-    $(this).closest('li').append("<li>Deadline: " + deadlineDate + "</li>");
-    //highlight if past current date
+    $(this).closest('li').append("<li>Deadline: " + deadlineDate + "<button class='showHide'>" + "<span class='button-label'>Show/Hide" + "</button" + "</li>");
 });
+
+//show and hide details
