@@ -55,6 +55,9 @@ function renderList(state) {
         buildTheHtmlOutput += '<button class="taskDelete">';
         buildTheHtmlOutput += '<span class="button-label">Delete</span>';
         buildTheHtmlOutput += '</button>';
+        buildTheHtmlOutput += '<button class="taskDetails">';
+        buildTheHtmlOutput += '<span class="button-label">Details</span>';
+        buildTheHtmlOutput += '</button>';
         buildTheHtmlOutput += '</div>';
         buildTheHtmlOutput += '</li>';
     });
