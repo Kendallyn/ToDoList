@@ -3,10 +3,10 @@
 var state = {
     tasks: [{
         name: 'Dust',
-        checked: false,
+        checked: false
     }, {
         name: 'Organize',
-        checked: false,
+        checked: false
     }]
 };
 
@@ -50,7 +50,7 @@ function renderList(state) {
         }
         buildTheHtmlOutput += '<div class="taskControls">';
         buildTheHtmlOutput += '<button class="taskToggle">';
-        buildTheHtmlOutput += '<span class="button-label">Check</span>';
+        buildTheHtmlOutput += '<span class="button-label">Complete</span>';
         buildTheHtmlOutput += '</button>';
         buildTheHtmlOutput += '<button class="taskDelete">';
         buildTheHtmlOutput += '<span class="button-label">Delete</span>';
@@ -71,7 +71,7 @@ $(document).ready(function () {
             var tasksName = $('#to-do-list-entry').val();
             var taskItem = {
                 name: tasksName,
-                checked: false,
+                checked: false
             }
             if (tasksName) {
                 addTask(state, taskItem);
@@ -86,7 +86,6 @@ $('ul').on('click', 'button.taskToggle', function (event) {
     var tasksName = $(this).closest('li').find('.to-do-list-task').text();
     checkTask(state, tasksName);
     renderList(state);
-    console.log('made it');
 });
 
 //delete this item from the list
