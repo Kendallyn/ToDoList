@@ -62,7 +62,9 @@ function renderList(state) {
         buildTheHtmlOutput += '</li>';
     });
     $('.to-Do-List').html(buildTheHtmlOutput);
+    //clear out last entry in fields
     $('#to-do-list-entry').val('');
+    $('#to-do-list-deadline').val('');
 }
 
 $(document).ready(function () {
