@@ -107,13 +107,16 @@ $('ul').on('click', 'button.taskDelete', function (event) {
 //add details to this item
 $('ul').on('click', 'button.taskDetails', function (event) {
     var detailsInput = prompt("Add task details here:");
-    $(this).closest('li').append("<li>Details: " + detailsInput + "</li>");
+    $(this).closest('li').append("<li>Details: " + detailsInput + "<button class='showHide'>" + "<span class='button-label'>Show/Hide" + "</button>" + "</li>");
 });
 
 //add deadline to this item
 $('ul').on('click', 'button.taskDeadline', function (event) {
     var deadlineDate = prompt("Deadline date for task:");
-    $(this).closest('li').append("<li>Deadline: " + deadlineDate + "<button class='showHide'>" + "<span class='button-label'>Show/Hide" + "</button" + "</li>");
+    $(this).closest('li').append("<li>Deadline: " + deadlineDate + "</li>");
 });
 
-//show and hide details
+////show and hide details
+//$('button.showHide').click(function () {
+//    $('li').toggle();
+//});
