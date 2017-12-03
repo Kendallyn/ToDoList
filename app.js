@@ -114,4 +114,5 @@ $('ul').on('click', 'button.taskDetails', function (event) {
 $('ul').on('click', 'button.taskDeadline', function (event) {
     var deadlineDate = prompt("Deadline date for task:");
     $(this).closest('li').append("<li>Deadline: " + deadlineDate + "</li>");
-})
+    //highlight if past current date
+});
