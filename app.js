@@ -116,7 +116,8 @@ $('ul').on('click', 'button.taskDeadline', function (event) {
     $(this).closest('li').append("<li>Deadline: " + deadlineDate + "</li>");
 });
 
-////show and hide details
-//$('button.showHide').click(function () {
-//    $('li').toggle();
-//});
+//show and hide details
+$('ul').on('click', 'button.showHide', (function (event) {
+    console.log('toggling');
+    $(this).closest('li').toggle('.showHide');
+}));
