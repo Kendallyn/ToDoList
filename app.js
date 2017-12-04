@@ -59,6 +59,9 @@ function renderList(state) {
         buildTheHtmlOutput += '<button class="taskDetails">';
         buildTheHtmlOutput += '<span class="button-label">Details</span>';
         buildTheHtmlOutput += '</button>';
+        //        buildTheHtmlOutput += '<button class="showHide">';
+        //        buildTheHtmlOutput += '<span class="button-label">Show/Hide</span>';
+        //        buildTheHtmlOutput += '</button>'
         buildTheHtmlOutput += '<button class="taskDeadline">';
         buildTheHtmlOutput += '<span class="button-label">Deadline</span>';
         buildTheHtmlOutput += '</button>';
@@ -107,7 +110,7 @@ $('ul').on('click', 'button.taskDelete', function (event) {
 //add details to this item
 $('ul').on('click', 'button.taskDetails', function (event) {
     var detailsInput = prompt("Add task details here:");
-    $(this).closest('li').append("<li>Details: " + detailsInput + "<button class='showHide'>" + "<span class='button-label'>Show/Hide" + "</button>" + "</li>");
+    $(this).closest('li').append("<li class='detailedList'>Details: " + detailsInput + "<button class='showHide'>" + "<span class='button-label'>Show/Hide" + "</button>" + "</li>");
 });
 
 //add deadline to this item
@@ -118,6 +121,5 @@ $('ul').on('click', 'button.taskDeadline', function (event) {
 
 //show and hide details
 $('ul').on('click', 'button.showHide', (function (event) {
-    console.log('toggling');
     $(this).closest('li').toggle('.showHide');
 }));
